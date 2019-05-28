@@ -24,7 +24,7 @@ public class UserSS implements UserDetails {
 		super();
 		this.email = email;
 		this.senha = senha;
-		this.authorities = perfis.stream().map(x -> new SimpleGrantedAuthority(x.getDescricao())).collect(Collectors.toList());
+		this.authorities = perfis == null ? null : perfis.stream().map(x -> new SimpleGrantedAuthority(x.getDescricao())).collect(Collectors.toList());
 	}
 
 	@Override

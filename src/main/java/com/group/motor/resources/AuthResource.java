@@ -19,13 +19,13 @@ public class AuthResource {
 	@Autowired
 	private JWTUtil jwtUtil;
 	
-	@RequestMapping(value = "/refresh_token", method = RequestMethod.POST)
-	public ResponseEntity<Void> refreshToken(HttpServletResponse response) {
-		UserSS user = UserService.authenticated();
-		String token = jwtUtil.generateToken(user.getUsername());
-		response.addHeader("Authorization", "Bearer " + token);
-		response.addHeader("access-control-expose-headers", "Authorization");
-		return ResponseEntity.noContent().build();
-	}
-	
+//	@RequestMapping(value = "/refresh_token", method = RequestMethod.POST)
+//	public ResponseEntity<Void> refreshToken(HttpServletResponse response) {
+//		UserSS user = UserService.authenticated();
+//		String token = jwtUtil.generateToken(user.getUsername());
+//		response.addHeader("Authorization", "Bearer " + token);
+//		response.addHeader("access-control-expose-headers", "Authorization");
+//		return ResponseEntity.noContent().build();
+//	}
+//	
 }
